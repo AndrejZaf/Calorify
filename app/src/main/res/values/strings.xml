@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Calorify</string>
+    <!-- EditTextPreference -->
+    <string name="default_calories_goal">2000</string>
+    <string name="calories_title">Calories goal</string>
+    <string name="calories_key">calorie_goal</string>
 </resources>

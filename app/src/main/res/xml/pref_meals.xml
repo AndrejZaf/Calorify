@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <EditTextPreference
+        android:defaultValue="@string/default_calories_goal"
+        android:title="@string/calories_title"
+        app:key="@string/calories_key"
+        android:summary=""/>
+</PreferenceScreen>

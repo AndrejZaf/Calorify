@@ -11,22 +11,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ProgressBar
-                android:layout_marginTop="40dp"
-                android:id="@+id/mainProgressBar"
-                style="?android:progressBarStyleHorizontal"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:progress="60"
-                android:progressDrawable="@drawable/circle"
-                android:layout_gravity="center"
-                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ProgressBar
+                    android:layout_marginTop="40dp"
+                    android:id="@+id/mainProgressBar"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:indeterminate="false"
+                    android:layout_centerInParent="true"
+                    android:progress="60"
+                    android:progressDrawable="@drawable/circle"
+                    android:layout_gravity="center"
+                    />
 
+                <TextView
+                    android:id="@+id/txt_calorie_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:text="Testing Calorie Goal" />
+
+            </RelativeLayout>
             <LinearLayout
                 android:id="@+id/linearTextFields"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="60dp"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
                 >
