@@ -3,6 +3,7 @@ package com.example.calorify;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -87,8 +88,23 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         mRv.setAdapter(mAdapter);
 
         setupSharedPreference();
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                long id = (long) viewHolder.itemView.getTag();
+                removeMeal(id);
+                mAdapter.swapCursor(getAllMealsToday());
+            }
+        }).attachToRecyclerView(mRv);
 //        Log.d("Cursor", String.valueOf(cursor.getCount()));
     }
+
 
     @Override
     protected void onDestroy() {
@@ -138,5 +154,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         if(key.equals(getString(R.string.calories_key))){
             mCaloriesGoal.setText(sharedPreferences.getString(key, getResources().getString(R.string.default_calories_goal)));
         }
+    }
+    private boolean removeMeal(long id){
+        return mDb.delete(MealContract.MealPlannerEntry.TABLE_NAME, MealContract.MealPlannerEntry._ID+"="+id, null) > 0;
     }
 }

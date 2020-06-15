@@ -43,7 +43,7 @@ public class TotalNutrients implements Serializable {
     private ZN zN;
     @SerializedName("P")
     private P p;
-    @SerializedName("VITAR_AE")
+    @SerializedName("VITA_RAE")
     private VITARAE vITARAE;
     @SerializedName("VITC")
     private VITC vITC;

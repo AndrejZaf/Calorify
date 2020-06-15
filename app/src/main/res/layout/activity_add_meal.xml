@@ -638,7 +638,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear"
+            android:text="Save Meal"
+            android:id="@+id/buttonSaveMeal"
             android:layout_margin="20dp"/>
     </LinearLayout>
 </LinearLayout>
