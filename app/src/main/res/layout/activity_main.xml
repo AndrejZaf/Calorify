@@ -1,98 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    >-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <ProgressBar-->
+<!--                    android:layout_marginTop="40dp"-->
+<!--                    android:id="@+id/mainProgressBar"-->
+<!--                    style="?android:progressBarStyleHorizontal"-->
+<!--                    android:layout_width="250dp"-->
+<!--                    android:layout_height="250dp"-->
+<!--                    android:indeterminate="false"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:progress="60"-->
+<!--                    android:progressDrawable="@drawable/circle"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txt_calorie_goal"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Testing Calorie Goal" />-->
+
+<!--            </RelativeLayout>-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearTextFields"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="60dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_gravity="center"-->
+<!--                >-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="40dp"-->
+<!--                    android:text="PROTEIN"-->
+<!--                    android:id="@+id/proteinResult"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="40dp"-->
+<!--                    android:text="CARBS"-->
+<!--                    android:id="@+id/carbsResult"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="40dp"-->
+<!--                    android:text="FAT"-->
+<!--                    android:id="@+id/fatResult"/>-->
+<!--            </LinearLayout>-->
+
+<!--            <View-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:id="@+id/firstBreak"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/darker_gray"-->
+<!--                />-->
+<!--    </LinearLayout>-->
+
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Add Meal"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:id="@+id/addButton"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/listMeals"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="List Meals" />-->
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/rv_meals_today"/>-->
+<!--    </LinearLayout>-->
+
+<!--</ScrollView>-->
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/toolbar" android:id="@+id/toolbar" />
+
+    <FrameLayout
         android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-    <LinearLayout
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"
+        android:layout_above="@id/bot_navigation"
+        android:layout_below="@id/toolbar"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ProgressBar
-                    android:layout_marginTop="40dp"
-                    android:id="@+id/mainProgressBar"
-                    style="?android:progressBarStyleHorizontal"
-                    android:layout_width="250dp"
-                    android:layout_height="250dp"
-                    android:indeterminate="false"
-                    android:layout_centerInParent="true"
-                    android:progress="60"
-                    android:progressDrawable="@drawable/circle"
-                    android:layout_gravity="center"
-                    />
-
-                <TextView
-                    android:id="@+id/txt_calorie_goal"
-                    android:layout_width="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_height="wrap_content"
-                    android:text="Testing Calorie Goal" />
-
-            </RelativeLayout>
-            <LinearLayout
-                android:id="@+id/linearTextFields"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="40dp"
-                    android:text="FAT"
-                    android:id="@+id/fatResult"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="40dp"
-                    android:text="CARBS" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="40dp"
-                    android:text="PROT" />
-            </LinearLayout>
-
-            <View
-                android:layout_marginTop="20dp"
-                android:id="@+id/firstBreak"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/darker_gray"
-                />
-    </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Meal"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:id="@+id/addButton"/>
-
-        <Button
-            android:id="@+id/listMeals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="List Meals" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rv_meals_today"/>
-    </LinearLayout>
-
-</ScrollView>
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation"
+        android:id="@+id/bot_navigation"
+        android:background="?android:attr/windowBackground"/>
+</RelativeLayout>
